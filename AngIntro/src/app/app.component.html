@@ -1,0 +1,33 @@
+<h1 [class.text-green] = "bool">Angular App Running</h1>
+
+<!--String Interpolation:to bind data inside of  tags-->
+<p>{{message}}</p>
+
+<app-navbar></app-navbar>
+
+<app-post [fromParent]='parentMessage'(messageEvent)='receivedMessage($event)'></app-post>
+
+<!---property binding:bind property as an html tag-->
+<img src="{{ imgUrl }}" alt="">
+<img [src] = "imgUrl" alt="">
+
+<!--Style Binding-->
+<h1 [style.color]="bool ? 'red':'green'">style Binding</h1>
+
+<!--Event Binding-->
+<button (click)="buttonClick()">Click me</button>
+
+<br>
+<!-- Event Filtering-->
+
+<!--Template Variable #..
+<input type="text" (keyup.enter)="onKeyUp(username.value)" #username>.-->
+
+<!--Two Way Data Binding-->
+<input type="text"  [(ngModel)]="userName" (keyup.enter)="onKeyUp()" >
+
+<!--one way Databinding: in this we can pass data from component to view only-->
+<input type="text" [value]="textValue" (keyup.enter)="onKeyUp()">
+
+<!--Two Way Data Binding-->
+<input type="text" [(ngModel)] = "textValue" (keyup.enter)="onKeyUp()">
